@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./nuxt-js-boiler",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"],
+      "~~/*": ["./*"],
+      "@@/*": ["./*"]
+    }
+  },
+  "exclude": [
+    "nuxt-js-boiler/node_modules", ".nuxt", "dist"]
+}
