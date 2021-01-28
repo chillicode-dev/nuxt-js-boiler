@@ -1,0 +1,8 @@
+{
+  "name": "nuxt-js-boiler",
+  "version": "1.0.0",
+  "author": "Chillicode <info@chillicode.ru> (https://github.com/chillicode-dev)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
