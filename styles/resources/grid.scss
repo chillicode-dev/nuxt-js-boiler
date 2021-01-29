@@ -1,0 +1,76 @@
+/*--------------------------------------------------------------
+# Grid variables
+--------------------------------------------------------------*/
+// Breakpoints (if they will be changed, also change values in src/styles/config/breakpoints.json)
+$desktop: 1440px; // Classic desktop screens
+$laptop: 1280px; // Laptops and old school 4:3 desktop screens
+$tablet: 1024px; // Vertical and horizontal tablets
+$phone: 768px; // Horizontal phones and small tablets
+$phone-l: 425px; // Vertical phones (e.g. iPhone 6/7/8 Plus)
+$phone-m: 375px; // Vertical phones (e.g. iPhone 6/7/8)
+$phone-xs: 321px; // Extra small old school phones (iPhone 5, iPhone SE, etc.)
+
+/*--------------------------------------------------------------
+# Mixins
+--------------------------------------------------------------*/
+// Disable margins helpers
+@mixin disable-last-margin($side) {
+  &:last-child {
+    margin-#{$side}: 0;
+  }
+}
+
+@mixin disable-nth-margin($nth, $side) {
+  &:nth-child(#{$nth}) {
+    margin-#{$side}: 0;
+  }
+}
+
+// Media queries
+@mixin create-media-query($max-width) {
+  @media all and (max-width: ($max-width - 1px)) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @include create-media-query($desktop) {
+    @content;
+  }
+}
+
+@mixin on-laptop {
+  @include create-media-query($laptop) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @include create-media-query($tablet) {
+    @content;
+  }
+}
+
+@mixin on-phone {
+  @include create-media-query($phone) {
+    @content;
+  }
+}
+
+@mixin on-phone-l {
+  @include create-media-query($phone-l) {
+    @content;
+  }
+}
+
+@mixin on-phone-m {
+  @include create-media-query($phone-m) {
+    @content;
+  }
+}
+
+@mixin on-phone-xs {
+  @include create-media-query($phone-xs) {
+    @content;
+  }
+}

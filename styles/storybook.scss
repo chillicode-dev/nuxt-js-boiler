@@ -1,0 +1,7 @@
+/*--------------------------------------------------------------
+# Overwritten styles for Storybook environment
+--------------------------------------------------------------*/
+// Set storybook body background to transparent to work with @storybook/addon-backgrounds
+.sb-show-main {
+  background-color: transparent;
+}

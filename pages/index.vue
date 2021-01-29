@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
+      <Header>Header content</Header>
       <h1 class="title">nuxt-js-boiler</h1>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green">Documentation</a>
@@ -14,7 +14,11 @@
 </template>
 
 <script>
-export default {};
+import Header from '~/components/Header';
+
+export default {
+  components: {Header},
+};
 </script>
 
 <style>

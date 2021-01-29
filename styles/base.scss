@@ -1,0 +1,50 @@
+@import 'vendor/reset';
+
+/*--------------------------------------------------------------
+# Load fonts
+--------------------------------------------------------------*/
+@include webfont($base-font-family, '../static/assets/fonts/Roboto-Regular.woff', $regular);
+
+/*--------------------------------------------------------------
+# Global app styles
+--------------------------------------------------------------*/
+// Reset the box-sizing
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// Body reset
+html {
+  font-size: $base-font-size;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  background: $bg-primary-color;
+  @include base-typography();
+  @include smooth-font();
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+// Default links
+a {
+  @include link($text-link-color, $text-link-hover-color);
+}
