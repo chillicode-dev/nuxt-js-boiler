@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "./nuxt-js-boiler",
+    "baseUrl": ".",
     "paths": {
+      "*": ["./*"],
       "~/*": ["./*"],
-      "@/*": ["./*"],
-      "~~/*": ["./*"],
-      "@@/*": ["./*"]
+      "@/*": ["./*"]
     }
   },
-  "exclude": [
-    "nuxt-js-boiler/node_modules", ".nuxt", "dist"]
+  "exclude": ["node_modules", ".nuxt", "dist", "storybook-static", ".idea"]
 }
