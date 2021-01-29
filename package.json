@@ -1,34 +1,32 @@
 {
   "name": "nuxt-js-boiler",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
-    "dev": "./node_modules/.bin/nuxt",
-    "build": "./node_modules/.bin/nuxt build",
-    "start": "./node_modules/.bin/nuxt start",
-    "generate": "./node_modules/.bin/nuxt generate",
-    "lint:js": "./node_modules/.bin/eslint --ext \\\".js,.vue\\\" --ignore-path .gitignore .",
-    "lint:style": "./node_modules/.bin/stylelint \\\"**/*.{vue,css}\\\" --ignore-path .gitignore",
-    "lint": "npm run lint:js && npm run lint:style"
-  },
-  "lint-staged": {
-    "*.{js,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \\\".js,.vue\\\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \\\"**/*.{vue,css}\\\" --ignore-path .gitignore",
+    "lint": "npm run lint:js && npm run lint:style",
+    "storybook": "start-storybook -p 3001",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/stylelint-module": "^4.0.0",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/vue": "^6.1.15",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-nuxt": "^2.0.0",
