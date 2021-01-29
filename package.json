@@ -2,7 +2,7 @@
   "name": "nuxt-js-boiler",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nuxt",
+    "dev": "npm-run-all -p app:dev storybook:dev",
     "app:dev": "nuxt --port 3000",
     "app:build": "nuxt build",
     "app:generate": "nuxt generate",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.2",
+    "is-in-browser": "^1.1.3",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
@@ -46,6 +47,7 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-prettier": "^1.1.2",
-    "stylelint-scss": "^3.18.0"
+    "stylelint-scss": "^3.18.0",
+    "templateman": "0.0.5"
   }
 }
