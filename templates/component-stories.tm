@@ -1,4 +1,4 @@
-import {makeStory} from 'utils/storybook';
+import {makeStory} from '@/utils/storybook';
 import ${TM:COMPONENT_NAME_PASCAL_CASE} from './${TM:COMPONENT_NAME_PASCAL_CASE}';
 
 export default {

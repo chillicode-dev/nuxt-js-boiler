@@ -2,6 +2,7 @@
   <div class="container">
     <div>
       <Header>Header content</Header>
+      <Intro>Header content</Intro>
       <h1 class="title">nuxt-js-boiler</h1>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green">Documentation</a>
@@ -14,14 +15,15 @@
 </template>
 
 <script>
-import Header from '~/components/Header';
+import Header from '@/components/Header';
+import Intro from '@/components/Intro';
 
 export default {
-  components: {Header},
+  components: {Header, Intro},
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;

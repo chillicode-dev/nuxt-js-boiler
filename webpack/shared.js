@@ -2,9 +2,11 @@ const path = require('path');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 
 /**
+ * @param envResources {'nuxt'|'storybook'}
  * Filenames in 'styles/resources' directory to be allowed in each component
  */
-const sassResources = () => [
+const sassResources = envResources => [
+  `styles/resources/${envResources}`,
   'styles/resources/colors',
   'styles/resources/grid',
   'styles/resources/mixins',

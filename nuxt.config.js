@@ -20,7 +20,7 @@ export default {
 
   // Inject style resources in each file: https://github.com/nuxt-community/style-resources-module
   styleResources: {
-    scss: sassResources().map(path => `~/${path}.scss`),
+    scss: sassResources('nuxt').map(path => `~/${path}.scss`),
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

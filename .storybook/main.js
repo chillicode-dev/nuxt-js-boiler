@@ -19,7 +19,7 @@ module.exports = {
       name: '@storybook/preset-scss',
       options: {
         sassLoaderOptions: {
-          additionalData: sassResources()
+          additionalData: sassResources('storybook')
             .map(path => `@import '${path}';`)
             .join(''),
           sassOptions: {
