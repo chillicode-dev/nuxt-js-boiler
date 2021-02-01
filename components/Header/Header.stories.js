@@ -1,4 +1,4 @@
-import {makeStory} from 'utils/storybook';
+import {makeStory} from '@/utils/storybook';
 import Header from './Header';
 
 export default {

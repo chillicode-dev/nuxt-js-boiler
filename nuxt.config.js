@@ -1,4 +1,4 @@
-import {sassResources} from './webpack/shared';
+import {sassResources, cssoWebpackPlugin, svgExcludeRuleFromLoaders, vueSvgLoaderRule} from './webpack/shared';
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -20,7 +20,7 @@ export default {
 
   // Inject style resources in each file: https://github.com/nuxt-community/style-resources-module
   styleResources: {
-    scss: sassResources().map(file => `~/styles/resources/${file}.scss`),
+    scss: sassResources().map(path => `~/${path}.scss`),
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -47,6 +47,20 @@ export default {
         collapseWhitespace: true, // https://github.com/nuxt/nuxt.js/issues/5800#issuecomment-570110683
         removeComments: true,
       },
+    },
+    extend(config, ctx) {
+      // Exclude SVG from Storybook file-loader
+      config.module.rules = svgExcludeRuleFromLoaders(config.module.rules);
+
+      // React SVG Loader
+      config.module.rules.push(vueSvgLoaderRule());
+
+      // CSS optimizations
+      if (!ctx.isDev) {
+        config.plugins.push(cssoWebpackPlugin());
+      }
+
+      return config;
     },
   },
 };

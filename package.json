@@ -31,9 +31,12 @@
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-links": "^6.1.15",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/vue": "^6.1.15",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "csso-webpack-plugin": "^2.0.0-beta.1",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.1",
@@ -47,11 +50,13 @@
     "prettier": "^2.2.1",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
     "stylelint": "^13.9.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.18.0",
-    "templateman": "0.0.5"
+    "templateman": "0.0.5",
+    "vue-svg-loader": "^0.16.0"
   }
 }

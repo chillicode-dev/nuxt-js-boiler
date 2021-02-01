@@ -1,29 +1,15 @@
 const path = require('path');
-// const CssoWebpackPlugin = require('csso-webpack-plugin').default;
-
-/**
- * Aliases for Webpack alias resolver
- */
-const aliases = () => ({
-  assets: path.resolve(process.cwd(), 'assets'),
-  components: path.resolve(process.cwd(), 'components'),
-  config: path.resolve(process.cwd(), 'config'),
-  layouts: path.resolve(process.cwd(), 'layouts'),
-  middleware: path.resolve(process.cwd(), 'middleware'),
-  modals: path.resolve(process.cwd(), 'modals'),
-  sections: path.resolve(process.cwd(), 'sections'),
-  services: path.resolve(process.cwd(), 'services'),
-  static: path.resolve(process.cwd(), 'static'),
-  store: path.resolve(process.cwd(), 'store'),
-  styles: path.resolve(process.cwd(), 'styles'),
-  tests: path.resolve(process.cwd(), 'tests'),
-  utils: path.resolve(process.cwd(), 'utils'),
-});
+const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 
 /**
  * Filenames in 'styles/resources' directory to be allowed in each component
  */
-const sassResources = () => ['colors', 'grid', 'mixins', 'variables'];
+const sassResources = () => [
+  'styles/resources/colors',
+  'styles/resources/grid',
+  'styles/resources/mixins',
+  'styles/resources/variables',
+];
 
 /**
  * @see https://github.com/sass/node-sass#includepaths
@@ -31,27 +17,9 @@ const sassResources = () => ['colors', 'grid', 'mixins', 'variables'];
 const sassIncludePaths = () => [process.cwd()];
 
 /**
- * @param env {'next'|'storybook'}
- * @see https://github.com/sass/node-sass#data
- */
-const sassSharedData = env => {
-  return `
-    $publicPath: ${env === 'storybook' ? '/public' : '""'};
-
-    @import 'styles/config/breakpoints.json';
-    @import 'styles/config/grid.json';
-    @import 'styles/config/colors.json';
-    @import 'styles/preferences/variables';
-    @import 'styles/preferences/grid';
-    @import 'styles/preferences/mixins';
-    @import 'styles/preferences/easings';
-  `;
-};
-
-/**
  * @see https://www.npmjs.com/package/csso-webpack-plugin
  */
-// const cssoWebpackPlugin = () => new CssoWebpackPlugin();
+const cssoWebpackPlugin = () => new CssoWebpackPlugin();
 
 /**
  * @see https://github.com/svg/svgo/blob/master/README.ru.md
@@ -171,7 +139,7 @@ const svgoConfig = () => ({
  * @param rules {Array<object>}
  * @returns {Array<object>}
  */
-const svgExcludeRuleFromStorybookLoaders = rules => {
+const svgExcludeRuleFromLoaders = rules => {
   return rules.map(rule => {
     if (rule.test.test('.svg')) {
       return {
@@ -185,19 +153,16 @@ const svgExcludeRuleFromStorybookLoaders = rules => {
 
 /**
  * Shared react-svg-loader rule
- * @see https://www.npmjs.com/package/react-svg-loader
- * @param defaultBabelLoader {string}
- * @returns {{include: string, test: RegExp, use: [*, {loader: string, options: {svgo: {plugins}, jsx: boolean}}]}}
+ * @see https://www.npmjs.com/package/vue-svg-loader
  */
-const reactSvgLoaderRule = defaultBabelLoader => ({
+const vueSvgLoaderRule = () => ({
   test: /\.svg$/,
-  include: path.resolve(process.cwd(), 'public', 'assets', 'icons'),
+  include: path.resolve(process.cwd(), 'static', 'assets', 'icons'),
   use: [
-    defaultBabelLoader,
+    'babel-loader',
     {
-      loader: 'react-svg-loader',
+      loader: 'vue-svg-loader',
       options: {
-        jsx: false, // true outputs JSX tags
         svgo: svgoConfig(),
       },
     },
@@ -206,11 +171,9 @@ const reactSvgLoaderRule = defaultBabelLoader => ({
 
 module.exports = {
   sassIncludePaths,
-  sassSharedData,
   sassResources,
   svgoConfig,
-  svgExcludeRuleFromStorybookLoaders,
-  reactSvgLoaderRule,
-  // cssoWebpackPlugin,
-  aliases,
+  svgExcludeRuleFromLoaders,
+  vueSvgLoaderRule,
+  cssoWebpackPlugin,
 };
