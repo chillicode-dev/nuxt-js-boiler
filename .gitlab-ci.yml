@@ -1,0 +1,33 @@
+# https://hub.docker.com/r/library/node/tags/
+image: node:14
+
+stages:
+  - test
+  - deploy
+
+run_tests:
+  stage: test
+  script:
+    - npm ci
+    - npm run linters:inspect
+
+deploy_to_dev:
+  stage: deploy
+  only:
+    - dev
+  script:
+    - echo "Deployed to dev-server"
+
+deploy_to_stage:
+  stage: deploy
+  only:
+    - stage
+  script:
+    - echo "Deployed to stage-server"
+
+deploy_to_prod:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo "Deployed to production-server"
