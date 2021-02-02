@@ -1,6 +1,7 @@
-### /services/
-В этой директории хранятся вспомогательные классы для работы внутри приложения.
-К примеру, мы можем создать класс-обертку `Api` для работы с REST API приложения.
+# SERVICES
 
-Обращаем внимание, что здесь должна находится только реализация классов, а не экземпляры.
-Экземпляры классов помещаем в `/utils/`.
+This directory contains helper classes for working inside the application.
+For example, we can create an `Api` wrapper class to work with a REST API application.
+
+Please note that only class implementations should be located here, not instances.
+Instances of the classes are placed in `/utils/`.
