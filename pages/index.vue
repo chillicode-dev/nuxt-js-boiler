@@ -1,57 +1,46 @@
 <template>
-  <div class="container">
-    <div>
-      <Header>Header content</Header>
-      <Intro>Header content</Intro>
-      <h1 class="title">nuxt-js-boiler</h1>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey">
-          GitHub
-        </a>
+  <div class="index-page">
+    <div class="container">
+      <div class="icon-wrapper">
+        <TestIcon />
+      </div>
+      <h1 class="title">Chillicode Nuxt.js Boilerplate</h1>
+      <div class="links-wrapper">
+        <a href="https://github.com/chillicode-dev/nuxt-js-boiler" target="_blank">Boilerplate Docs</a>
+        <a href="https://nuxtjs.org/docs/2.x/get-started/installation" target="_blank">Nuxt.js Docs</a>
+        <a href="https://storybook.js.org/docs/react/get-started/introduction" target="_blank">Storybook Docs</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header';
-import Intro from '@/components/Intro';
+import TestIcon from '@/static/assets/icons/test-icon.svg';
 
 export default {
-  components: {Header, Intro},
+  components: {TestIcon},
 };
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.index-page {
+  padding: 150px;
   text-align: center;
 }
 
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 660px;
+}
+
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
-    Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  font-size: 48px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.links-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 }
 </style>

@@ -10,7 +10,11 @@ export default {
 const Template = (args, {argTypes}) => ({
   props: Object.keys(argTypes),
   components: {Header},
-  template: '<Header v-bind="$props">This is Header component</Header>',
+  template: '<Header v-bind="$props" />',
 });
 
 export const Default = makeStory(Template, {});
+
+export const WithHiddenLogo = makeStory(Template, {
+  hideLogo: true,
+});

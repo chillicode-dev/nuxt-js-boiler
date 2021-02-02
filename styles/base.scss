@@ -3,7 +3,7 @@
 /*--------------------------------------------------------------
 # Load fonts
 --------------------------------------------------------------*/
-@include webfont($base-font-family, '../static/assets/fonts/Roboto-Regular.woff', $regular);
+@include webfont($base-font-family, '#{$static-path}/assets/fonts/Roboto-Regular.woff', $regular);
 
 /*--------------------------------------------------------------
 # Global app styles
