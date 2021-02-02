@@ -14,8 +14,8 @@
     "stylelint:fix": "npm run stylelint:inspect -- --fix",
     "prettier:inspect": "prettier --check \"./**/*.{js,jsx,vue,json,css,scss}\" --ignore-path .gitignore",
     "prettier:fix": "prettier --write \"./**/*.{js,jsx,vue,json,css,scss}\" --ignore-path .gitignore",
-    "linters:inspect": "npm run prettier:inspect && npm run stylelint:inspect && npm run eslint:inspect",
-    "linters:fix": "npm run prettier:fix && npm run stylelint:fix && npm run eslint:fix"
+    "linters:inspect": "npm-run-all -p prettier:inspect stylelint:inspect eslint:inspect",
+    "linters:fix": "npm-run-all -p prettier:fix stylelint:fix eslint:fix"
   },
   "husky": {
     "hooks": {
