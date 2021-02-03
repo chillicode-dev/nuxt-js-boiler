@@ -10,7 +10,7 @@
  └─storybook.scss
 ```
 
-- `/styles/preferences/` - SCSS variables, mixins and functions used in SCSS.
+- `/styles/resources/` - SCSS variables, mixins and functions used in SCSS.
   All of them are available globally in each component
 - `/styles/vendor/` - libraries vendor styles
 - `/styles/base.scss` - general styles for the whole application (i.e. `body`, `a` or `html`)
