@@ -1,6 +1,6 @@
 {
   "name": "nuxt-js-boiler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "dev": "npm-run-all -p app:dev storybook:dev",
     "app:dev": "nuxt --port 3000",
