@@ -42,13 +42,13 @@ or:
 {Action} + {subjects} in {place}
 ```
 
-For example, we need to change PropTypes in the component `/components/Button/Button.js`, then the name of the commit will be:
+For example, we need to change some prop in the component `/components/Button/Button.vue`, then the name of the commit will be:
 ```
-Button.js: fix propTypes
+Button.vue: change 'isVisible' prop logic
 ```
 or:
 ```
-Fix propTypes in Button.js
+Change 'isVisible' prop logic in Button.vue
 ```
 
 #### Merge Requests
