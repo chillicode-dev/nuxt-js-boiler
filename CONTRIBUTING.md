@@ -9,21 +9,20 @@ These 2 main branches should have CI/CD pipelines for automated testing and depl
 
 Another branches are used by developers and will be merged to `dev` branch in the future.
 
-To start development you got to stick to the following rules:
+To start development you should follow some rules:
 1. Fork from the current `dev` branch
-1. Start naming with the name of the type of action that we perform in this branch
-   (`feature`, `hotfix`, `support`, `release`). For example: `feature/..`
-1. After the slash, put the task number from the task tracker and briefly describe the actions that you perform in this branch (only lowercase letters and a hyphen). For example: `feature/1337-responsive-header`
-1. After making the changes, make a Merge Request to `dev`
+1. Name branch with the type of action that you perform (`feature`, `hotfix`, `support`, `release`). For example: `feature/..`
+1. After the slash, put the task number from the task tracker and briefly describe actions that you perform in this branch (only lowercase letters and a hyphen). For example: `feature/1337-responsive-header`
+1. After changes, create a Merge Request to `dev`
 
-Hence, the order of the merge is as follows:
+The order of the merge is as follows:
 ```
 feature/1-feature-title -> dev -> master
 ```
 
 #### Commits
 All commit names must be in English and begin with a capital letter.
-If the changes affected only one file, you should first indicate its name, for example:
+If the changes affected only one file, you should first insert its name, for example:
 ```
 Button.js: Change text styles
 ```
@@ -42,7 +41,7 @@ or:
 {Action} + {subjects} in {place}
 ```
 
-For example, we need to change some prop in the component `/components/Button/Button.vue`, then the name of the commit will be:
+For example, you need to change some prop in the component `/components/Button/Button.vue`, then the name of the commit will be:
 ```
 Button.vue: change 'isVisible' prop logic
 ```
