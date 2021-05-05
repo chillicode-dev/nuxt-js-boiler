@@ -1,6 +1,6 @@
 # Nuxt.js boilerplate for big and scalable projects
 
-The cure for headaches in development projects on Vue + Nuxt.js.
+The cure for headaches in development projects on Vue + Nuxt.js in [Chillicode Production Agency](https://chillicode.ru?utm_source=mail&utm_medium=git&utm_campaign=nuxt).
 
 ## <a name="inside">What’s Inside?</a>
 - [Nuxt.js](https://nuxtjs.org/) as a platform
